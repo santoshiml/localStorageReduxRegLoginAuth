@@ -23,12 +23,10 @@ const Register = () => {
 
   const RegisterUser = (data) => {
     console.log(data)
-    // e.preventDefault();
-    // let data = { firstName, lastName, email, password };
-   
     dispatch(registeruser(data));
     navigate("/login");
   };
+  
 
   return (
     <div>
@@ -67,6 +65,7 @@ const Register = () => {
           />
           {errors?.email?.type === "required" && <p className="error">Email required*</p>}
         </div><br/>
+
         <div className="field-form">
           <input
             type="password"
@@ -77,6 +76,7 @@ const Register = () => {
           />
           {errors?.password?.type === "required" && <p className="error">Password required*</p>}
         </div><br/>
+        
         <div className="field-form">
         <span>Have an account?</span>
         <Link to="/login"> Login</Link>{" "}
